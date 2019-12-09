@@ -4,14 +4,19 @@ Para realizar con exito la prueba usted debe de clonar este repositorio y realiz
 
 https://bootstrapmade.com/demo/NewBiz/
 
-- Tome captura de los comandos o procedimientos utilizados.
-- Crear una rama llamada "dev" donde realizará los procedimientos que considere necesarios. 
-- El orden de los procedimientos será elegido por el postulante a excepción de la rama "fixContactForm".
-- Hacer "Pull Request" de la rama "fixContactForm" hasta el final del ejercicio. 
+- Haga un Fork del repositorio para crear su propia copia en su cuenta de GitHub.
+- Tome captura de los comandos o procedimientos utilizados para la realización del ejercicio.
+- Crear una rama llamada "dev" donde mezclará todas las ramas (lib, css, js, master).
+- El orden de las mezclas será elegido por el postulante a excepción de la rama "fixContactForm" que deberá ser incorporada a la rama "dev" como parte final del ejercicio.
 - Eliminar el archivo "654029-job-promotion.zip" y subir el cambio. 
-- Excluir del repositorio todo los archivos con la extensión .txt, .psd, .eps, .zip, los directorios "license" y su respectivo contenido, los directorios node_modules, psd y eps. 
+- Crear un archivo "gitignore" y excluir del repositorio todo los archivos con la extensión .txt, .psd, .eps, .zip, los directorios "license" y su respectivo contenido, los directorios node_modules, psd y eps. 
+- Hacer un push para agregar el archivo "gitignore".
 - Añadir referencias al plugin "datatable" en index.html (CSS y JS)
 - Dentro de la carpeta "img" incluya un nuevo directorio llamada "screenshots" y agregue sus capturas de pantalla.
 - Al finalizar realice una "mezcla" de la rama "dev" a "master" y de "master" a "lib", "js". 
-- Elimine la rama "fixContactForm"
-- Crear una nueva rama con el nombre "init" donde su estado sea el primer commit.
+- Hacer "Pull Request" de la rama "fixContactForm" a la rama "dev". 
+- Después de aceptar el "Pull request" eliminar "fixContactForm".
+- Crear una nueva rama con el nombre "init" a partir de "dev" y regresar su estado al primer commit.
+- Realizar un push con los cambios realizados a la rama "init".
+
+- Al finalizar la prueba enviar un correo electrónico a "admin@citylab.la" y a "victor.reyes@citylab.la" con la URL del repositorio que contiene la prueba realizada. 
