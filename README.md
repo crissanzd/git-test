@@ -14,3 +14,4 @@ https://bootstrapmade.com/demo/NewBiz/
 - Dentro de la carpeta "img" incluya un nuevo directorio llamada "screenshots" y agregue sus capturas de pantalla.
 - Al finalizar realice una "mezcla" de la rama "dev" a "master" y de "master" a "lib", "js". 
 - Elimine la rama "fixContactForm"
+- Crear una nueva rama con el nombre "init" donde su estado sea el primer commit.
