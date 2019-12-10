@@ -16,6 +16,7 @@ https://bootstrapmade.com/demo/NewBiz/
 - Al finalizar realice una "mezcla" de la rama "dev" a "master" y de "master" a "lib", "js". 
 - Hacer "Pull Request" de la rama "fixContactForm" a la rama "dev". 
 - Después de aceptar el "Pull request" eliminar "fixContactForm".
+- Corrija el diseño de la plantilla generado por inconsistencias en Bootstrap utilizando una de las tres opciones siguientes: fixContactForm, fixReferences, fixComment
 - Crear una nueva rama con el nombre "init" a partir de "dev" y regresar su estado al primer commit.
 - Realizar un push con los cambios realizados a la rama "init".
 
