@@ -1,0 +1,202 @@
+
+//El fork lo cree dando click a fork del repositorio original
+
+//Clonando
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba
+$ git clone https://github.com/crissanzd/git-test.git
+
+//abriendo el repositorio
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba
+$ cd git-test
+
+//creando rama dev
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (master)
+$ git branch dev
+
+
+//Yendo a rama dev
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (master)
+$ git checkout dev
+
+
+//viendo el grafico de las ramas
+git log --all --decorate --oneline --graph
+
+
+//Mezclando ramas en dev
+
+//merge fixComment a dev
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git merge fixComment
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git add .
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git commit -m "Merge dev y fixcomment"
+
+//merge fixReferences a dev
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git merge fixReferences
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git add .
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git commit 
+
+//merge css a dev
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git merge origin/css
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git add .
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git commit 
+
+//merge lib a dev
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git merge origin/lib
+
+	*Nota tuve conflicto con tres archivos que tuve que resolver
+	 lib/datatable/js/dataTables.jqueryui.js(con editor de texto)
+	 lib/datatable/css/jquery.dataTable.css(con editor de texto)
+	 lib/datatable/images/sort_asc.png(con el comando git checkout --theirs porque note que la imagen actual estaba agrandada en la rama dev, mientras que en la rama lib estaba en tamaño normal)
+
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git checkout --their  lib/datatable/images/sort_asc.png 
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git add .
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git commit -m "Merge lib a dev"
+
+
+//merge downgradeBootstrap a dev
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git merge origin/css
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git add .
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git commit 
+
+
+//reverti el merge anterior debido a que vi problemas con las referencias en el index que eran cambiadas en la rama downgradeBootstrap
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git revert HEAD
+
+//merge js a dev
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git merge origin/js
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git add .
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git commit 
+
+//borrando img/654029-job-promotion.zip
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+cd img
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test/img (dev)
+rm 654029-job-promotion.zip
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test/img (dev)
+cd ..
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git add .
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git commit -m "654029-job-promotion.zip borrado"
+
+//añadiendo gitignore
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+touch .gitignore
+      
+      *Nota abrí el editor de texto para escribir en .gitignore
+       lo siguiente:
+       /[Ll]icense/
+	   /node_modules/
+	   /psd/
+	   /eps/
+	   *.txt
+	   *.psd
+	   *.psd
+	   *.zip
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git add .gitignore
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git commit -m ".gitignore añadido"
+
+
+//añadiendo referencias del pluggin DataTable a index.html
+
+*En el editor añadi lo siguiente en el head:
++  <link href="lib/datatable/css/dataTables.bootstrap.css">
++  <link href="lib/datatable/css/dataTables.bootstrap.min.css">
++  <link href="lib/datatable/css/dataTables.bootstrap4.css">
++  <link href="lib/datatable/css/dataTables.bootstrap4.min.css">
++  <link href="lib/datatable/css/dataTables.foundation.css">
++  <link href="lib/datatable/css/dataTables.foundation.min.css">
++  <link href="lib/datatable/css/dataTables.jqueryui.css">
++  <link href="lib/datatable/css/dataTables.jqueryui.min.css">
++  <link href="lib/datatable/css/dataTables.semanticui.css">
++  <link href="lib/datatable/css/dataTables.semanticui.min.css">
++  <link href="lib/datatable/css/jquery.dataTables.css">
++  <link href="lib/datatable/css/jquery.dataTables.min.css">
+
+*y lo siguiente debajo de donde se encuentran las referencias a los scripts
++  <script src="lib/datatable/js/dataTables.bootstrap.js"></script>
++  <script src="lib/datatable/js/dataTables.bootstrap.min.js"></script>
++  <script src="lib/datatable/js/dataTables.bootstrap4.js"></script>
++  <script src="lib/datatable/js/dataTables.bootstrap4.min.js"></script>
++  <script src="lib/datatable/js/dataTables.foundation.js"></script>
++  <script src="lib/datatable/js/dataTables.foundation.min.js"></script>
++  <script src="lib/datatable/js/dataTables.jqueryui.js"></script>
++  <script src="lib/datatable/js/dataTables.jqueryui.min.js"></script>
++  <script src="lib/datatable/js/dataTables.semanticui.js"></script>
++  <script src="lib/datatable/js/dataTables.semanticui.min.js"></script>
++  <script src="lib/datatable/js/jquery.dataTables.js"></script>
++  <script src="lib/datatable/js/jquery.dataTables.min.js"></script>
+
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git add .
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git commit -m "Añadiendo referencias del pluggin dataTable"
+
+
+//Merge dev a master
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git checkout master
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (master)
+git merge dev
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (master)
+git add .
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (master)
+git commit 
+
+//Merge master a lib
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (master)
+git checkout lib
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (lib)
+git merge master
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (lib)
+git add .
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (lib)
+git commit 
+
+
+//Hacer pull request
+*Nota hice el pullrequest en el navegador en el repositorio remoto de la rama fixContactForm a dev
+sin embargo GitHub no me dejó aceptar mi propio pull request, puede verse esto en las captura de Screenshots
+debido a esto tuve que hacer el merge manualmente
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git merge fixContacForm
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git add .
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git commit -m "Merge fixContactForm a Dev"
+
+
+
+//Corrijiendo el diseño
+*Me fije que faltaba una referencia a bootstrap.min.css en index y que habia sido borrada en la rama fixReferences
+con el editor se la agregue.
+
+//Agregando rama init y haciendo push
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git branch init
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (dev)
+git checkout init
+Cristian@Sanchez-Deras MINGW64 ~/Desktop/Prueba/git-test (init)
+git push origin init
