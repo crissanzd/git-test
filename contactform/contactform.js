@@ -1,7 +1,9 @@
 jQuery(document).ready(function($) {
   "use strict";
 
-  //Contact
+
+  /* Contact */
+
   $('form.contactForm').submit(function() {
     var f = $(this).find('.form-group'),
       ferror = false,
